@@ -3,26 +3,16 @@ Django App Login SignUp With Reset Password
 
 ```
 git clone https://github.com/AhmedELGAMMUDI/Django-Login-Signup.git
-```
-
-```
 cd Django-Login-Signup
-```
-
-```
 pip install -r requirements.txt
-```
-
-```
 python manage.py migrate
-```
-
-```
 python manage.py runserver
 ```
+
+
 ## Reset Password
 
-> You have to add the email and app password 
+> You have to add the email and password 
 
 ```
 EMAIL_HOST_USER = '' 
