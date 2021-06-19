@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <div class="login-root">
+        <div class="box-root flex-flex flex-direction--column" style="min-height: 100vh;flex-grow: 1; background-color: #F3F3F3;">
+            <div class="box-root padding-top--90 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
+                <div class="formbg-outer">
+                    <div class="formbg">
+                        <div class="formbg-inner padding-horizontal--48">
+                            <span class="padding-bottom--15">Sign in to your account</span>
+                            <form id="stripe-login" method="post">
+                                {% csrf_token %}
+                                <div class="field padding-bottom--24">
+                                    <label for="email">Username</label>
+                                    <input type="text" name="{{ form.username.name }}" required>
+                                </div>
+                                <div class="field padding-bottom--24">
+                                    <div class="grid--50-50">
+                                        <label for="password">Password</label>
+                                        <div class="reset-pass">
+                                            <a href="{% url 'password_reset' %}">Forgot your password?</a>
+                                        </div>
+                                    </div>
+                                    <input type="password" name="{{ form.password.name }}" required>
+                                </div>
+                                <div class="field padding-bottom--24 padding-top--24">
+                                    <input type="submit" name="submit" value="Log In">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="footer-link padding-top--24">
+                        <span>Don't have an account? <a href="{% url 'signup' %}">Sign up</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
